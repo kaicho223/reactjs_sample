@@ -74,7 +74,7 @@ gulp.task('default', ['buildAll', 'watchAll']);
 
 function gulpTaskBrowserify(index) {
 	browserify('./' + index + '/jsx/main.jsx', { debug: true })
-			.transform(babelify, {presets: ["es2015"]})
+			.transform(babelify, {presets: ["es2015", "react"]})
 			.bundle()
 			.on("error", function (err) {
 				console.log("Error : " + err.message);

@@ -8,7 +8,7 @@ export default class Page2 extends React.Component {
 	}
 	render() {
 		return (
-			<div className="contents">
+			<div>
 				Page2
 				<p>
 					<button onClick={this.submitNext.bind(this)}>Next</button>

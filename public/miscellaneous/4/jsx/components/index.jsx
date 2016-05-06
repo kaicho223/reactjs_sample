@@ -1,21 +1,25 @@
 import React from 'react'
-import RouteCSSTransitionGroup from "./cssTransitionGroup.jsx"
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 export default class Index extends React.Component {
 	render() {
 		return (
 			<div>
+				{ /*
 				<header>
 					this is header
 				</header>
-				<main className="container">
-					<RouteCSSTransitionGroup transitionName="example" component="div" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
-						{this.props.children}
-					</RouteCSSTransitionGroup>
+				*/ }
+				<main className="contents">
+				<ReactCSSTransitionGroup component="div" transitionName="swap" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+					{this.props.children}
+				</ReactCSSTransitionGroup>
 				</main>
+				{ /*
 				<footer>
 					this is footer
 				</footer>
+				*/ }
 			</div>
 		);
 	}

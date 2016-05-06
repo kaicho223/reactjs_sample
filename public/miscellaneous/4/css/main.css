@@ -1,36 +1,52 @@
-.example-enter {
-	opacity: .01;
-	transform: translateY(30px);
-	transition: all .25s ease-out;
+.contents-wrapper {
+	position: relative;
+	width: 1200px;
+	height: 400px;
 }
- 
-.example-enter.example-enter-active {
-	opacity: 1;
-	transform: translateY(0);
-}
- 
-.example-leave {
-	opacity: 1;
-	transform: translateY(0);
-	transition: all .25s ease-out;
-}
- 
-.example-leave.example-leave-active {
-	opacity: 0;
-	transform: translateY(-30px);
-}
-
-.container {
-	position:relative;
-	width: 700px;
-	max-width: 100%;
-	margin: 30px auto;
-}
-
 .contents {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.Image {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 15px;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.swap-enter {
+	opacity: 0.01;
+	transform: translateX(1200px);
+	transition: all .5s ease-in;
+}
+
+.swap-enter.swap-enter-active {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.swap-leave {
+	opacity: 1;
+	transform: translateX(0);
+	transition: all .5s ease-in;
+}
+
+.swap-leave.swap-leave-active {
+	opacity: 0;
+	transform: translateX(-1200px);
+}
+
+.spinner-enter {
+	opacity: 0.01;
+	transition: opacity .5s ease-in;
+}
+.spinner-enter.spinner-enter-active {
+	opacity: 1;
+}
+.spinner-leave {
+	opacity: 1;
+	transition: opacity .5s ease-in;
+}
+.spinner-leave.spinner-leave-active {
+	opacity: 0.01;
 }

@@ -8,7 +8,7 @@ export default class Home extends React.Component {
 	}
 	render() {
 		return (
-			<div className="contents">
+			<div>
 				Home
 				<p>
 					<button onClick={this.submitNext.bind(this)}>Next</button>
