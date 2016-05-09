@@ -1,14 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {Router, Route, hashHistory, IndexRoute, Link} from 'react-router'
 
-export default class Page3 extends Component {
+export default class Page3 extends React.Component {
 	render() {
 		return (
-			<div className="Image">
-				<h1>Page 3</h1>
-				<p>
-					Test
-				</p>
+			<div>
+				Page3
 			</div>
-		)
+		);
 	}
 }

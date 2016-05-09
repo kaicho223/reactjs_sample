@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
 export default class Page1 extends Component {
-	handleSubmit(e) {
+	submitNext(e) {
 		e.preventDefault();
+		
+		this.context.router.push('/page2');
 
-		this.props.onContentsSubmit({ displayPageName: "Page2" });
 	}
 	render() {
 		return (
@@ -17,9 +18,12 @@ export default class Page1 extends Component {
 					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
 				<p>
-					<button onClick={this.handleSubmit.bind(this)}>Next</button>
+					<button onClick={this.submitNext.bind(this)}>Next</button>
 				</p>
 			</div>
 		)
 	}
 }
+Page1.contextTypes = {
+	router: React.PropTypes.object.isRequired
+};

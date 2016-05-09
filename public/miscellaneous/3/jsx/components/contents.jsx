@@ -1,23 +1,41 @@
-import React from 'react'
-import {Router, Route, hashHistory, IndexRoute} from 'react-router'
+import React, { Component } from 'react'
 
-import Index from './index.jsx'
-import Home from './home.jsx'
 import Page1 from './page1.jsx'
 import Page2 from './page2.jsx'
 import Page3 from './page3.jsx'
 
-export default class Contents extends React.Component {
+export default class Contents extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			stepNo: 1,
+			displayPageName: "Page1"
+		};
+	}
+	handleContentsSubmit(data) {
+		this.setState(data);
+	}
 	render() {
 		return (
-			<Router history={hashHistory}>
-				<Route path="/" component={Index}>
-					<IndexRoute component={Home} />
-					<Route path="page1" component={Page1} />
-					<Route path="page2" component={Page2} />
-					<Route path="page3" component={Page3} />
-				</Route>
-			</Router>
+			<div>
+				<header>
+					this is header
+				</header>
+				{(() => {
+					switch (this.state.displayPageName) {
+						case "Page1":
+							return <Page1 displayPageName={this.state.displayPageName} onContentsSubmit={this.handleContentsSubmit.bind(this)} />;
+						case "Page2":
+							return <Page2 displayPageName={this.state.displayPageName} onContentsSubmit={this.handleContentsSubmit.bind(this)} />;
+						case "Page3":
+							return <Page3 displayPageName={this.state.displayPageName} onContentsSubmit={this.handleContentsSubmit.bind(this)} />;
+						default:
+					}
+				})()}
+				<footer>
+					this is footer
+				</footer>
+			</div>
 		);
 	}
 }
